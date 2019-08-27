@@ -15,9 +15,10 @@
     tags:
       Type: docker
 
-#- name: Wait for SSH to come up
-# wait_for:
+- name: Wait for SSH to come up
+ wait_for:
 #    host: "{{ item.public_ip }}"
 #    port: 22 
+    timeout: 40
 #    state: started 
-#  with_items: "{{ ec2.instances }}"
+  with_items: "{{ ec2.instances }}"
