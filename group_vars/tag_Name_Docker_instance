@@ -1,2 +1,2 @@
 ---
-ansible_ssh_common_args = '-o UserKnownHostsFile=/dev/null'
+host_key_checking = False
