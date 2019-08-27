@@ -1,0 +1,19 @@
+---
+# tasks file for create-aws-ec2
+- name: launch-new-instance
+  ec2:
+    instance_type: "{{ instance_type }}"
+    key_name: "{{ key_name }}"
+    image: "{{ image }}"
+    region: "{{ region }}"
+    group: "{{ security_group }}"
+    count: 1
+    vpc_subnet_id: subnet-caa164a0
+    wait: yes
+    assign_public_ip: yes
+    
+    instance_tags:
+      Name: "{{ instance_name }}"
+  register: ec2
+
+
