@@ -16,7 +16,6 @@ pipeline {
   environment{
     AWS_ACCESS_KEY_ID = credentials('AWS_ACCESS_KEY_ID')
     AWS_SECRET_ACCESS_KEY = credentials('AWS_SECRET_ACCESS_KEY')
-    ANSIBLE_HOST_KEY_CHECKING = False
   }
 
   stages {
@@ -27,7 +26,7 @@ pipeline {
     }
     stage ("Install Docker") {
       steps {
-        sh 'ansible-playbook --key-file=/home/ubuntu/gvv2012.pem -u ubuntu -i inventory/ec2.py install-app.yml'
+        sh 'ansible-playbook --key-file=/home/ubuntu/gvv2012.pem -u ubuntu -i inventory/ec2.py -e 'host_key_cheking=False' install-app.yml'
       }
     }
   }
