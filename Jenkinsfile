@@ -22,7 +22,8 @@ pipeline {
   stages {
     stage ("Create AWS EC2 Instance") {
       steps {
-        ansiblePlaybook(playbook: 'create-ec2-instance.yml')
+        sh 'ls'
+//        ansiblePlaybook(playbook: 'create-ec2-instance.yml')
       }
     }
     stage ("Install Docker") {
