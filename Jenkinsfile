@@ -24,13 +24,11 @@ pipeline {
         ansiblePlaybook(playbook: 'create-ec2.yml')
       }
     }
-  }
-
-  stages {
     stage ("Install Docker") {
       steps {
         ansiblePlaybook (inventory: 'inventory/ec2.py', playbook: 'install-app.yml')
       }
     }
   }
+
 }
