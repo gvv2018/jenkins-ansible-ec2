@@ -9,9 +9,9 @@ pipeline {
     timestamps()
   }
 
-  triggers {
-    pollSCM('* * * * *')
-  }
+//  triggers {
+//    pollSCM('* * * * *')
+//  }
 
   environment{
     AWS_ACCESS_KEY_ID = credentials('AWS_ACCESS_KEY_ID')
