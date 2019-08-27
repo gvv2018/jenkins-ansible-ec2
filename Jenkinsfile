@@ -21,6 +21,7 @@ pipeline {
   stages {
     stage ("Create AWS EC2 Instance") {
       steps {
+        sh 'pwd'
 //        ansiblePlaybook(playbook: 'create-ec2-instance.yml')
       }
     }
