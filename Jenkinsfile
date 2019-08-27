@@ -22,7 +22,7 @@ pipeline {
     stage ("Create AWS EC2 Instance") {
       steps {
 //        ansiblePlaybook(playbook: 'create-ec2.yml')
-        ansiblePlaybook(vaultCredentialsId: 'gvv2012_pem' , inventory: 'inventory/ec2.py', playbook: 'install-app.yml')
+        ansiblePlaybook (inventory: 'inventory/ec2.py', playbook: 'install-app.yml')
       }
     }
   }
