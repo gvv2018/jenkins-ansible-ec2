@@ -1,5 +1,5 @@
 ---
-- name: Install nginx(ssl), jenkins and ansible
+- name: Install docker
   hosts: tag_Name_Docker_instance
   become: yes
   roles:
