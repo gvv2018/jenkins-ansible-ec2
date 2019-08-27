@@ -1,0 +1,12 @@
+---
+# tasks file for create-aws-ec2
+- name: terminate-docker-instance
+  ec2_instance:
+    instance_type: "{{ instance_type }}"
+    key_name: "{{ key_name }}"
+    region: "{{ region }}"
+    state: terminated
+    filters:
+      tag:Type: docker
+
+
