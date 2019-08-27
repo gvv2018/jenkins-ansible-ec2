@@ -26,7 +26,7 @@ pipeline {
     }
     stage ("Install Docker") {
       steps {
-        sh 'ansible-playbook --key-file=/home/ubuntu/gvv2012.pem -u ubuntu -i inventory/ec2.py -e 'host_key_cheking=False' install-app.yml'
+        sh 'ansible-playbook --key-file=/home/ubuntu/gvv2012.pem -u ubuntu -i inventory/ec2.py install-app.yml'
       }
     }
   }
