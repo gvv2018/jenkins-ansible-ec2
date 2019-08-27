@@ -20,10 +20,9 @@ pipeline {
   }
 
   stages {
-    stage ("Create AWS EC2 Instance") {
+    stage ("Delete old Instance and Create new AWS EC2 Instance") {
       steps {
-        sh 'ls'
-//        ansiblePlaybook(playbook: 'create-ec2-instance.yml')
+        ansiblePlaybook(playbook: 'create-ec2-instance.yml')
       }
     }
     stage ("Install Docker") {
